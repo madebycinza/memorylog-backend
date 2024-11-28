@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "places",
+  "info": {
+    "singularName": "place",
+    "pluralName": "places",
+    "displayName": "Place",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Country": {
+      "type": "enumeration",
+      "enum": [
+        "Brazil",
+        "United States"
+      ],
+      "default": "United States"
+    },
+    "Albums": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::album.album",
+      "mappedBy": "Places"
+    },
+    "Continent": {
+      "type": "enumeration",
+      "enum": [
+        "Africa",
+        "Antarctica",
+        "Asia",
+        "Australia",
+        "Europe",
+        "North America",
+        "South America"
+      ],
+      "default": "North America"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
